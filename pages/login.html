@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h2 class="text-2xl font-semibold mb-4">Login</h2>
+
+        <form id="loginForm">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-600">Username or Phone Number</label>
+                <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-600">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md">
+            </div>
+
+            <button type="button" onclick="login()" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Login</button>
+
+            <div class="mt-4 text-center">
+                <span class="text-gray-600">or</span>
+            </div>
+
+            <button type="button" onclick="loginWithGoogle()" class="w-full bg-red-500 text-white p-2 rounded-md mt-2 hover:bg-red-600">Sign Up with Google</button>
+
+            <div class="mt-4 text-center">
+                <a href="#" onclick="toggleLoginForm()">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            // Replace this with your actual login logic
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Example: Simple check for username and password
+            if (username === 'your_username_or_phone' && password === 'your_password') {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        function loginWithGoogle() {
+            // Replace this with your actual Google sign-up logic
+            alert('Signing up with Google...');
+        }
+
+        function toggleLoginForm() {
+            const blurElements = document.querySelectorAll('.blur-background');
+            blurElements.forEach(element => {
+                element.classList.toggle('blur-background');
+            });
+
+            const form = document.getElementById('loginForm');
+            form.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
